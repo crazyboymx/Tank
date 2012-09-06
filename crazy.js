@@ -268,7 +268,8 @@ Jx().$package(function(J){
         *被子弹击中的处理程序
         **/
         onHitByBullet:function(e){
-
+            this.say('不要打我啦，我是无辜的~~');
+            this.back(100);
         },
 
         /**
