@@ -122,7 +122,8 @@ Jx().$package(function(J){
             this.arena.center = [this.arena.w/2, this.arena.h/2];
             this.enemy = this.enemy || {};
             this.size = self.getSize();
-            this.r = this.tank.moveSpeed / this.tank.turnSpeed;
+            //this.r = this.tank.moveSpeed / this.tank.turnSpeed;
+            this.r = 8 / 6/180.0*Math.PI;
             this.validArena = new Rect(this.size[0]*0.8, this.size[1]*0.8, this.arena.w-this.size[0]*1.6, this.arena.h-this.size[0]*1.6);
             this.bulletSpeed = 12;
             this.stepLengthBase = this.size[1];
