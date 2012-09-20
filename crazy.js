@@ -44,6 +44,14 @@ Jx().$package(function(J){
 		}
 		return str;
     };
+    //弧度转角度
+    var r2a = function (radian){
+        return (radian*180.0/Math.PI);
+    }
+    //角度转弧度
+    var a2r = function (angle){
+        return (angle/180.0*Math.PI);
+    }
     var getDist = function(pos1, pos2) {
         return Math.sqrt((pos1[0]-pos2[0])*(pos1[0]-pos2[0])+(pos1[1]-pos2[1])*(pos1[1]-pos2[1]));
     };
@@ -183,8 +191,8 @@ Jx().$package(function(J){
         predictEnemyPos: function(enmy, interval) {
             var et = this.enemy[enmy];
             var pos = new Array(2);
-            pos[0] = (et.pos[0] + interval*et.speed*Math.cos(et.heading));
-            pos[1] = (et.pos[1] + interval*et.speed*Math.sin(et.heading));
+            pos[0] = (et.pos[0] + interval*et.speed*Math.cos(a2r(et.heading)));
+            pos[1] = (et.pos[1] + interval*et.speed*Math.sin(a2r(et.heading)));
             return pos;
         },
         predictMyPos: function(interval) {
